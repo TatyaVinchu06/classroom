@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | CORE Campus</title>
+    
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="resources.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <div id="sidebar-container"></div>
+
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <div class="page-title">
+                    <button class="back-btn" onclick="window.location.href='dashboard.html'">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h1>Resources</h1>
+                </div>
+                
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search notes, videos, topics...">
+                </div>
+
+                <div class="header-actions">
+                    <button class="btn-primary" id="uploadBtn">
+                        <i class="fas fa-cloud-upload-alt"></i> <span>Upload</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="subject-tabs-container" id="subjectTabs">
+                </div>
+
+            <div class="controls-section">
+                <div class="filter-group">
+                    <button class="filter-pill active" data-type="all">All</button>
+                    <button class="filter-pill" data-type="pdf"><i class="far fa-file-pdf"></i> PDF</button>
+                    <button class="filter-pill" data-type="video"><i class="far fa-play-circle"></i> Video</button>
+                    <button class="filter-pill" data-type="link"><i class="fas fa-link"></i> Links</button>
+                </div>
+                
+                <div class="layout-toggle">
+                    <button class="toggle-btn active" id="gridBtn" title="Grid View">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="toggle-btn" id="listBtn" title="List View">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="resources-container" id="resourcesContainer">
+                <div class="unit-section skeleton-loader">
+                    <div style="padding:20px; background:#f8fafc; border-bottom:1px solid #eee; height:50px;"></div>
+                    <div style="padding:20px; height:150px;"></div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="uploadModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📤 Upload Resource</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label>Resource Title</label>
+                    <input type="text" placeholder="e.g. Unit 1 Lecture Notes" required>
+                </div>
+
+                <div class="form-row" style="display:flex; gap:15px;">
+                    <div class="form-group" style="flex:1;">
+                        <label>Type</label>
+                        <select id="resourceType" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;">
+                            <option value="pdf">PDF Document</option>
+                            <option value="video">Video URL</option>
+                            <option value="link">External Link</option>
+                            <option value="ppt">Presentation (PPT)</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="flex:1;">
+                        <label>Unit / Topic</label>
+                        <select id="unitSelect" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;">
+                            <option>Unit 1</option>
+                            <option>Unit 2</option>
+                            <option>Unit 3</option>
+                            <option>Unit 4</option>
+                            <option>Unit 5</option>
+                            <option>Unit 6</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" id="fileInputGroup">
+                    <label>File Upload</label>
+                    <div class="file-drop-area">
+                        <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                        <br>
+                        <span>Drag & Drop or Click to Browse</span>
+                        <input type="file" hidden>
+                    </div>
+                </div>
+
+                <div class="form-group hidden" id="urlInputGroup" style="display:none;">
+                    <label>Resource URL</label>
+                    <input type="url" placeholder="https://www.youtube.com/..." style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;">
+                </div>
+
+                <button type="submit" class="btn-primary full-width" style="width:100%; margin-top:1rem; justify-content:center;">
+                    Upload Resource
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="previewModal">
+        <div class="modal-content preview-size">
+            <div class="modal-header">
+                <h2 id="previewTitle">Resource Preview</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="preview-body" id="previewContent">
+                </div>
+            
+            <div class="modal-footer" style="padding-top:1rem; text-align:right;">
+                <button class="btn-primary" id="downloadBtn">
+                    <i class="fas fa-download"></i> Download / Open
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="sidebar.js"></script>
+    <script src="resources.js"></script>
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 /* --- SHARED THEME (Matches Login) --- */
 :root {
     --primary: #003366;       /* The exact Login Blue */
@@ -19,35 +20,6 @@ a { text-decoration: none; color: inherit; }
 
 .app-container { display: flex; height: 100%; }
 
-/* --- SIDEBAR (Matches Login Brand Section) --- */
-.sidebar {
-    width: 260px;
-    background: var(--primary);
-    background-image: radial-gradient(circle at top right, #004a99 0%, transparent 45%); /* Login Gradient */
-    color: white;
-    display: flex; flex-direction: column;
-    padding: 2rem 1.5rem;
-    position: relative;
-    z-index: 10;
-}
-
-.sidebar-header { display: flex; align-items: center; gap: 12px; margin-bottom: 3rem; }
-.logo-icon { font-size: 1.5rem; color: #FFD700; /* Gold from the Owl Beak */ }
-.sidebar-header h2 { font-weight: 800; font-size: 1.5rem; letter-spacing: 0.5px; }
-
-.group-label {
-    font-size: 0.7rem; font-weight: 700; color: rgba(255,255,255,0.5);
-    margin-top: 1.5rem; margin-bottom: 0.8rem; letter-spacing: 1px;
-}
-
-.nav-item {
-    display: flex; align-items: center; gap: 12px;
-    padding: 12px; border-radius: 10px;
-    color: rgba(255,255,255,0.8);
-    transition: all 0.2s; font-size: 0.95rem; margin-bottom: 4px;
-}
-.nav-item:hover { background: rgba(255,255,255,0.1); color: white; transform: translateX(5px); }
-.nav-item.active { background: white; color: var(--primary); font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
 /* Mini Profile at Bottom */
 .sidebar-footer { margin-top: auto; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
