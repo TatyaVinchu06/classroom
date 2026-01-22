@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | CORE Campus</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i class="fas fa-cube"></i></div>
+                <h2>CORE</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <p class="group-label">ACADEMICS</p>
+                    
+                    <a href="dashboard.html" class="nav-item active">
+                        <i class="fas fa-home"></i> <span>Dashboard</span>
+                    </a>
+                    
+                    <a href="assignments.html" class="nav-item">
+                        <i class="fas fa-code"></i> <span>Assignments</span>
+                    </a>
+                    
+                    <a href="workspace.html" class="nav-item">
+                        <i class="fas fa-laptop-code"></i> <span>Code Editor</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-book"></i> <span>Resources</span>
+                    </a>
+
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-question-circle"></i> <span>Doubts</span>
+                    </a>
+                </div>
+
+                <div class="nav-group">
+                    <p class="group-label">CAMPUS</p>
+                    <a href="#" class="nav-item"><i class="fas fa-bullhorn"></i> <span>Notices</span></a>
+                    <a href="#" class="nav-item"><i class="fas fa-calendar-alt"></i> <span>Events</span></a>
+                    <a href="#" class="nav-item"><i class="fas fa-users"></i> <span>Clubs</span></a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-mini-profile">
+                    <div class="avatar">O</div>
+                    <div class="info">
+                        <span class="name">Om Bhamare</span>
+                        <span class="role">Student ID: 4022</span>
+                    </div>
+                    <button class="logout-btn" onclick="window.location.href='index.html'">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                    <p class="date-display">Wednesday, 24 Jan</p>
+                </div>
+                
+                <div class="top-actions">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div class="notif-badge">
+                        <i class="fas fa-bell"></i>
+                        <span class="count-badge">3</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                
+                <div class="welcome-section">
+                    <div class="welcome-text">
+                        <h2 id="greeting">Welcome back, Om!</h2>
+                        <p>You have <strong>2 assignments</strong> due soon and <strong>1 event</strong> today.</p>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="action-btn"><i class="fas fa-plus"></i> New Submission</button>
+                        <button class="action-btn outline"><i class="fas fa-hand-paper"></i> Ask Doubt</button>
+                    </div>
+                </div>
+
+                <div class="stats-container" id="stats-row">
+                    </div>
+
+                <div class="content-split">
+                    
+                    <div class="section-container">
+                        <div class="section-header">
+                            <h3>Upcoming Deadlines</h3>
+                            <a href="assignments.html">View All</a>
+                        </div>
+                        <div class="card-list" id="deadlines-list">
+                            </div>
+                    </div>
+
+                    <div class="section-container">
+                        <div class="section-header">
+                            <h3>Campus Feed</h3>
+                            <div class="filter-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                        <div class="feed-list" id="activity-feed">
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="dashboard.js"></script>
+</body>
+</html>

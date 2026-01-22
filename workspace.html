@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace | CORE Campus</title>
+    <link rel="stylesheet" href="workspace.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.36.1/min/vs/loader.min.js"></script>
+</head>
+<body>
+
+    <header class="ide-header">
+        <div class="left-controls">
+            <button class="home-btn" onclick="window.location.href='assignments.html'">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="assignment-info">
+                <span class="course-tag">CS302</span>
+                <h1 id="assignTitle">Web Development Project</h1>
+            </div>
+        </div>
+
+        <div class="center-controls">
+            <span class="save-status" id="saveStatus"><i class="fas fa-check-circle"></i> Saved</span>
+        </div>
+
+        <div class="right-controls">
+            <button class="btn-secondary" id="saveBtn"><i class="fas fa-save"></i> Save</button>
+            <button class="btn-primary" id="runBtn"><i class="fas fa-play"></i> Run Code</button>
+            <button class="btn-submit" id="submitBtn">Submit</button>
+        </div>
+    </header>
+
+    <div class="ide-container">
+        
+        <aside class="file-explorer">
+            <div class="explorer-header">
+                <span>EXPLORER</span>
+                <div class="explorer-actions">
+                    <i class="fas fa-folder-plus"></i>
+                    <i class="fas fa-file-plus"></i>
+                </div>
+            </div>
+            <div class="file-tree" id="fileTree">
+                </div>
+        </aside>
+
+        <div class="editor-container">
+            <div class="tab-bar" id="tabBar">
+                </div>
+            <div id="monaco-editor-root"></div>
+        </div>
+
+        <div class="preview-container">
+            <div class="panel-header">
+                <div class="panel-tabs">
+                    <button class="panel-tab active" data-view="preview">
+                        <i class="fas fa-globe"></i> Preview
+                    </button>
+                    <button class="panel-tab" data-view="terminal">
+                        <i class="fas fa-terminal"></i> Terminal
+                    </button>
+                </div>
+                <button class="clear-btn" id="clearOutput"><i class="fas fa-ban"></i></button>
+            </div>
+
+            <div class="panel-content active" id="viewPreview">
+                <iframe id="previewFrame" title="Result"></iframe>
+            </div>
+
+            <div class="panel-content" id="viewTerminal">
+                <div class="terminal-output" id="terminalOutput">
+                    <span class="term-line system">> Ready to execute...</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="workspace.js"></script>
+</body>
+</html>

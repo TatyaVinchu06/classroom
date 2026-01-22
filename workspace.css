@@ -1,0 +1,112 @@
+:root {
+    --ide-bg: #1e1e1e;       /* VS Code Dark */
+    --ide-sidebar: #252526;
+    --ide-header: #333333;
+    --ide-border: #444444;
+    --accent: #007acc;       /* VS Code Blue */
+    --text-main: #cccccc;
+    --text-light: #ffffff;
+    --success: #10b981;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { height: 100vh; display: flex; flex-direction: column; background: var(--ide-bg); overflow: hidden; }
+
+/* HEADER */
+.ide-header {
+    height: 50px; background: var(--ide-header); border-bottom: 1px solid var(--ide-border);
+    display: flex; justify-content: space-between; align-items: center; padding: 0 1rem;
+    color: var(--text-main);
+}
+
+.left-controls { display: flex; align-items: center; gap: 15px; }
+.home-btn { background: none; border: none; color: var(--text-main); cursor: pointer; font-size: 1.1rem; }
+.home-btn:hover { color: white; }
+
+.assignment-info h1 { font-size: 0.9rem; color: white; margin: 0; display: inline-block; }
+.course-tag { font-size: 0.75rem; background: var(--accent); color: white; padding: 2px 6px; border-radius: 4px; margin-right: 8px; }
+
+.save-status { font-size: 0.8rem; color: var(--text-main); opacity: 0.8; }
+
+.right-controls { display: flex; gap: 10px; }
+.btn-primary, .btn-secondary, .btn-submit {
+    padding: 6px 14px; border-radius: 4px; font-size: 0.85rem; cursor: pointer; border: none; display: flex; align-items: center; gap: 6px;
+}
+.btn-secondary { background: #444; color: white; }
+.btn-primary { background: var(--success); color: white; font-weight: 600; }
+.btn-submit { background: var(--accent); color: white; }
+.btn-primary:hover { opacity: 0.9; }
+
+/* LAYOUT GRID */
+.ide-container {
+    flex: 1; display: grid; 
+    grid-template-columns: 200px 1fr 1fr; /* FileTree | Editor | Preview */
+    height: calc(100vh - 50px);
+}
+
+/* 1. SIDEBAR */
+.file-explorer {
+    background: var(--ide-sidebar); border-right: 1px solid var(--ide-border);
+    color: var(--text-main); font-size: 0.9rem;
+}
+.explorer-header {
+    padding: 10px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px;
+    display: flex; justify-content: space-between;
+}
+.file-item {
+    padding: 6px 15px; cursor: pointer; display: flex; align-items: center; gap: 8px;
+    border-left: 3px solid transparent;
+}
+.file-item:hover { background: #2a2d2e; color: white; }
+.file-item.active { background: #37373d; color: white; border-left-color: var(--accent); }
+.file-icon { width: 16px; text-align: center; }
+
+/* 2. EDITOR */
+.editor-container {
+    display: flex; flex-direction: column; border-right: 1px solid var(--ide-border);
+    background: var(--ide-bg); width: 100%;
+}
+.tab-bar {
+    height: 35px; background: var(--ide-header); display: flex; overflow-x: auto;
+}
+.tab {
+    padding: 0 15px; display: flex; align-items: center; gap: 8px;
+    background: #2d2d2d; color: #969696; font-size: 0.85rem; cursor: pointer;
+    border-right: 1px solid var(--ide-border); border-top: 2px solid transparent;
+}
+.tab.active { background: var(--ide-bg); color: white; border-top-color: var(--accent); }
+.tab-close { font-size: 0.7rem; opacity: 0.7; }
+.tab-close:hover { opacity: 1; color: #ff6b6b; }
+
+#monaco-editor-root { flex: 1; width: 100%; }
+
+/* 3. PREVIEW / TERMINAL */
+.preview-container {
+    display: flex; flex-direction: column; background: #1e1e1e;
+}
+.panel-header {
+    height: 35px; background: var(--ide-header); border-bottom: 1px solid var(--ide-border);
+    display: flex; justify-content: space-between; align-items: center; padding-right: 10px;
+}
+.panel-tabs { display: flex; height: 100%; }
+.panel-tab {
+    background: transparent; border: none; color: #969696; padding: 0 15px;
+    cursor: pointer; font-size: 0.85rem; height: 100%; border-bottom: 2px solid transparent;
+}
+.panel-tab.active { color: white; border-bottom-color: var(--accent); }
+.clear-btn { background: none; border: none; color: #969696; cursor: pointer; }
+
+.panel-content { flex: 1; display: none; position: relative; }
+.panel-content.active { display: block; }
+
+#previewFrame { width: 100%; height: 100%; border: none; background: white; }
+
+.terminal-output {
+    padding: 15px; font-family: 'Consolas', 'Courier New', monospace; font-size: 0.9rem; color: #cccccc;
+    overflow-y: auto; height: 100%;
+}
+.term-line { display: block; margin-bottom: 4px; }
+.term-line.system { color: #4ec9b0; }
+.term-line.success { color: #10b981; }
+.term-line.error { color: #ff6b6b; }

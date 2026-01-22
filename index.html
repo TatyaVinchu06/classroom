@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORE Campus | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+    <audio id="success-sound" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="main-container">
+        
+        <div class="env-badge">🧪 Beta v1.0</div>
+
+        <div class="brand-section">
+            <div class="brand-content">
+                <h1 class="brand-title">CORE<br>Campus</h1>
+                <p class="brand-subtitle">The all-in-one platform for coding, clubs, and campus life.</p>
+                
+                <div class="static-quote">
+                    "Finally, a system that actually works for students."
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-wrapper">
+                
+                <div class="mascot-container">
+                    <svg id="owl-mascot" viewBox="0 0 200 150">
+                        <g id="owl-body">
+                            <path d="M40,90 Q100,140 160,90 Q180,30 100,20 Q20,30 40,90" fill="#003366"/>
+                            <path d="M35,50 L20,10 L60,35 Z" fill="#002244"/>
+                            <path d="M165,50 L180,10 L140,35 Z" fill="#002244"/>
+                        </g>
+                        
+                        <g id="eyes-group">
+                            <circle class="eye-white" cx="70" cy="75" r="22" fill="#fff"/>
+                            <circle class="eye-white" cx="130" cy="75" r="22" fill="#fff"/>
+                            <g id="pupils">
+                                <circle class="pupil" cx="70" cy="75" r="9" fill="#1a202c"/>
+                                <circle class="pupil" cx="130" cy="75" r="9" fill="#1a202c"/>
+                            </g>
+                        </g>
+                        
+                        <path d="M100,90 L90,105 L110,105 Z" fill="#FFD700"/>
+
+                        <g id="arms">
+                            <path id="arm-left" class="owl-arm" d="M30,110 Q10,130 40,150 L60,150 Z" fill="#002244"/>
+                            <path id="arm-right" class="owl-arm" d="M170,110 Q190,130 160,150 L140,150 Z" fill="#002244"/>
+                        </g>
+                    </svg>
+                </div>
+
+               <div class="login-card">
+    <div class="header">
+        <h2>Welcome Back</h2> 
+        <p>Please enter your details to sign in.</p>
+    </div>
+
+    <form id="loginForm">
+        <div class="input-group">
+            <label for="email">College ID / Email</label>
+            <input type="text" id="email" placeholder="e.g. student@college.edu" autocomplete="off">
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+                <input type="password" id="password" placeholder="••••••••">
+                <i class="fas fa-eye" id="togglePassword"></i>
+            </div>
+        </div>
+
+        <div class="actions">
+            <label class="remember-me">
+                <input type="checkbox"> Remember me
+            </label>
+            <a href="#" class="forgot-pass">Forgot Password?</a>
+        </div>
+
+        <button type="submit" id="loginBtn">Log In</button>
+    </form>
+    
+    <p id="error-msg">Invalid credentials. Try 'core123'.</p>
+
+    <div class="card-footer">
+        <p>New to CORE? <a href="#" class="signup-link">Create an Account</a></p>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

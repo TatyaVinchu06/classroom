@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments | CORE Campus</title>
+    <link rel="stylesheet" href="dashboard.css"> 
+    <link rel="stylesheet" href="assignments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon"><i class="fas fa-cube"></i></div>
+                <h2>CORE</h2>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <p class="group-label">ACADEMICS</p>
+                    
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fas fa-home"></i> <span>Dashboard</span>
+                    </a>
+                    
+                    <a href="assignments.html" class="nav-item active">
+                        <i class="fas fa-code"></i> <span>Assignments</span>
+                    </a>
+                    
+                    <a href="workspace.html" class="nav-item">
+                        <i class="fas fa-laptop-code"></i> <span>Code Editor</span>
+                    </a>
+                    
+                    <a href="#" class="nav-item">
+                        <i class="fas fa-book"></i> <span>Resources</span>
+                    </a>
+                </div>
+
+                <div class="nav-group">
+                    <p class="group-label">CAMPUS</p>
+                    <a href="#" class="nav-item"><i class="fas fa-bullhorn"></i> <span>Notices</span></a>
+                    <a href="#" class="nav-item"><i class="fas fa-calendar-alt"></i> <span>Events</span></a>
+                    <a href="#" class="nav-item"><i class="fas fa-users"></i> <span>Clubs</span></a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-mini-profile">
+                    <div class="avatar">O</div>
+                    <div class="info">
+                        <span class="name">Om Bhamare</span>
+                        <span class="role">Student ID: 4022</span>
+                    </div>
+                    <button class="logout-btn" onclick="window.location.href='index.html'">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <div class="page-title">
+                    <button class="back-btn" onclick="window.location.href='dashboard.html'">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h1>Assignments</h1>
+                </div>
+            </header>
+
+            <div class="controls-section">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by subject or title...">
+                </div>
+                
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="pending">Pending</button>
+                    <button class="filter-tab" data-filter="submitted">Submitted</button>
+                    <button class="filter-tab" data-filter="overdue">Overdue</button>
+                </div>
+            </div>
+
+            <div class="assignments-container" id="assignmentsList">
+                <div class="skeleton-loader" id="loader">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    
+    <script src="assignments.js"></script>
+</body>
+</html>

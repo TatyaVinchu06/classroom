@@ -1,0 +1,178 @@
+/* --- Reusing Variables from dashboard.css --- */
+
+/* STICKY CONTROLS */
+.controls-section {
+    position: sticky;
+    top: 0;
+    background: var(--bg-body); /* Matches background to look seamless */
+    z-index: 10;
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.search-bar {
+    background: white;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.search-bar input { border: none; outline: none; width: 100%; font-size: 0.95rem; }
+
+.filter-tabs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 5px; }
+.filter-tab {
+    padding: 6px 16px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+.filter-tab:hover { border-color: var(--accent); color: var(--accent); }
+.filter-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* --- Page Title & Back Button Styling --- */
+
+.page-title {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between arrow and text */
+}
+
+.page-title h1 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin: 0;
+}
+
+.back-btn {
+    background: white;
+    border: 1px solid var(--border); /* Matches your search bar border */
+    color: var(--text-muted);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.back-btn:hover {
+    background: var(--primary); /* Deep Blue on hover */
+    color: white;
+    border-color: var(--primary);
+    transform: translateX(-3px); /* Subtle animation moving left */
+    box-shadow: 0 4px 10px rgba(0, 51, 102, 0.2);
+}
+
+/* ASSIGNMENT SECTIONS */
+.section-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 1rem; margin-top: 2rem;
+}
+.section-header h2 { font-size: 1.1rem; font-weight: 700; color: var(--text-main); }
+.count-badge {
+    background: #e2e8f0; color: var(--text-muted);
+    padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; font-weight: 700;
+}
+
+/* SECTION VARIANTS */
+.section-overdue h2 { color: #ef4444; }
+.section-overdue .count-badge { background: #fee2e2; color: #ef4444; }
+
+.section-duesoon h2 { color: #f59e0b; }
+.section-duesoon .count-badge { background: #ffedd5; color: #c2410c; }
+
+
+/* ASSIGNMENT CARD */
+.assignment-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.2rem;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.assignment-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border-color: var(--accent);
+}
+
+/* Left Side: Info */
+.card-left { flex: 1; }
+.card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.subject-badge {
+    font-size: 0.7rem; font-weight: 700;
+    padding: 3px 6px; border-radius: 4px;
+    background: #eff6ff; color: var(--accent);
+    text-transform: uppercase;
+}
+.type-badge {
+    font-size: 0.7rem; padding: 3px 6px; border-radius: 4px;
+    background: #f8fafc; color: var(--text-muted); border: 1px solid var(--border);
+}
+
+.card-title { font-size: 1rem; font-weight: 600; color: var(--text-main); margin-bottom: 4px; }
+.card-meta { font-size: 0.85rem; color: var(--text-muted); display: flex; align-items: center; gap: 10px; }
+
+/* Progress Bar (Mini) */
+.time-bar {
+    width: 100px; height: 4px; background: #f1f5f9; border-radius: 2px;
+    display: inline-block; overflow: hidden; vertical-align: middle; margin-right: 5px;
+}
+.time-fill { height: 100%; border-radius: 2px; }
+
+/* Right Side: Action */
+.card-action .btn {
+    padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+    border: none; cursor: pointer; display: flex; align-items: center; gap: 6px;
+    transition: 0.2s;
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-danger { background: #fee2e2; color: #dc2626; }
+.btn-danger:hover { background: #fecaca; }
+
+.btn-secondary { background: #f1f5f9; color: var(--text-muted); }
+.btn-secondary:hover { background: #e2e8f0; }
+
+.btn-info { background: #ecfdf5; color: #059669; }
+
+
+/* SKELETON LOADER */
+.skeleton-loader { display: flex; flex-direction: column; gap: 1rem; }
+.skeleton-card {
+    height: 100px; background: #e2e8f0; border-radius: 12px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* EMPTY STATE */
+.empty-state { text-align: center; padding: 3rem; color: var(--text-muted); }
+.empty-icon { font-size: 2rem; margin-bottom: 1rem; opacity: 0.5; }
