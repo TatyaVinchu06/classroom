@@ -79,4 +79,70 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'index.html';
         }
     });
+    // --- 6. DETAIL VIEW LOGIC (Updated Structure) ---
+    const overlay = document.getElementById('detailOverlay');
+    const detailContent = document.getElementById('detailContent');
+
+    window.openDetail = (d) => {
+        
+        // 1. Generate Answers HTML
+        const answersHTML = d.comments.map(c => `
+            <div class="answer-item ${c.accepted ? 'accepted' : ''}">
+                <div class="big-vote-box">
+                    <button class="vote-btn"><i class="fas fa-caret-up"></i></button>
+                    <span class="big-score">${c.accepted ? 5 : 1}</span>
+                    <button class="vote-btn"><i class="fas fa-caret-down"></i></button>
+                    ${c.accepted ? '<i class="fas fa-check accepted-check"></i>' : ''}
+                </div>
+                <div class="answer-body">
+                    <p class="a-text">${c.text}</p>
+                    
+                    <div class="user-card">
+                        <span class="time">Answered ${d.time}</span>
+                        <div class="user-info">
+                            <div class="u-avatar">${c.author.charAt(0)}</div>
+                            <div class="u-name">${c.author}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        // 2. Generate Full View HTML
+        detailContent.innerHTML = `
+            <div class="question-section">
+                <div class="big-vote-box">
+                    <button class="vote-btn"><i class="fas fa-caret-up"></i></button>
+                    <span class="big-score">${d.votes}</span>
+                    <button class="vote-btn"><i class="fas fa-caret-down"></i></button>
+                </div>
+                
+                <div class="q-body-container">
+                    <h1 class="q-title">${d.title}</h1>
+                    <div class="tags-row" style="margin-bottom:1rem;">
+                        ${d.tags.map(t => `<span class="tag-pill">#${t}</span>`).join('')}
+                    </div>
+                    
+                    <p class="q-text">${d.desc}</p>
+
+                    <div class="user-card" style="background: #e0f2fe;">
+                        <span class="time">Asked ${d.time}</span>
+                        <div class="user-info">
+                            <div class="u-avatar" style="background:#0284c7;">${d.author.charAt(0)}</div>
+                            <div class="u-name" style="color:#0284c7;">${d.author}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="answers-header">${d.answers} Answers</h3>
+            <div class="answers-list">
+                ${d.answers === 0 ? '<div class="empty-state">No answers yet. Be the first to help!</div>' : answersHTML}
+            </div>
+        `;
+        
+        overlay.classList.add('active');
+    };
+
+    document.getElementById('closeDetail').onclick = () => overlay.classList.remove('active');
 });

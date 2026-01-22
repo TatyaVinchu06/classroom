@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <aside class="sidebar">
             <div class="sidebar-header">
                 <div class="logo-icon"><i class="fas fa-cube"></i></div>
-                <h2>CORE</h2>
+                <h2>Spark Tech</h2>
             </div>
             
             <nav class="sidebar-nav">
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas fa-book"></i> <span>Resources</span>
                     </a>
                                       
-                    <a href="#" class="nav-item" id="nav-doubts">
+                    <a href="doubts.html" class="nav-item" id="nav-doubts">
                         <i class="fas fa-question-circle"></i> <span>Doubts</span>
                     </a>
                 </div>
@@ -168,5 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (currentPage === 'assignments.html') document.getElementById('nav-assignments')?.classList.add('active');
         else if (currentPage === 'workspace.html') document.getElementById('nav-workspace')?.classList.add('active');
         else if (currentPage === 'resources.html') document.getElementById('nav-resources')?.classList.add('active');
+        else if (currentPage === 'doubts.html') document.getElementById('nav-doubts')?.classList.add('active');
     }
 });
